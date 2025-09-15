@@ -1,4 +1,4 @@
-from typing import List, Optional, Dict, Any
+from typing import Any, Dict, List, Literal, Optional
 
 from pydantic import BaseModel, Field
 
@@ -41,6 +41,17 @@ class NutritionList(BaseModel):
 class EstimateRequest(BaseModel):
     meal: str
 
+
 class EstimateResponse(BaseModel):
     ingredients: Dict[str, Any]
     nutrition: Dict[str, Any]
+
+
+class NutriBenchRecord(BaseModel):
+    meal_description: str = Field(..., description="Original user meal text")
+    carb: float = Field(..., description="Total carbohydrates in grams")
+    fat: float = Field(..., description="Total fat in grams")
+    energy: float = Field(..., description="Total energy in kilocalories")
+    protein: float = Field(..., description="Total protein in grams")
+    country: Optional[str] = None
+    serving_type: Optional[Literal["metric", "natural"]] = None
