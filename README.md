@@ -6,6 +6,8 @@ Built with **Python 3.12** and **FastAPI**, structured for readability, maintain
 Leverages **LangChain + OpenAI** for structured reasoning about food, ingredients, and nutrition.  
 Provides both **ingredient breakdowns** and **macro estimations**, and can be evaluated against the **NutriBench dataset**.  
 
+We used **LangSmith** for monitoring, debugging, and evaluating LLM runs to ensure accuracy and reliability.
+
 ---
 
 ## Project Structure
